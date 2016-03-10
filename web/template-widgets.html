@@ -1,0 +1,279 @@
+                <!-- sub menu span -->                
+                <div class="span2">
+
+                    <!-- profile sub menu -->
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Albums</li>
+                            <li <?php echo $selectedSubMenu == 'albumCollage' ? 'class="active"' : '' ?>><a id="albumCollageMenuLink" href="index.php?page=widgets&sub=albumCollage">Collage</a></li>
+                            <li class="nav-header">Artists</li>
+                            <li <?php echo $selectedSubMenu == 'artistCollage' ? 'class="active"' : '' ?>><a id="artistCollageMenuLink" href="index.php?page=widgets&sub=artistCollage">Collage</a></li>
+                            <li <?php echo $selectedSubMenu == 'artistSpiral' ? 'class="active"' : '' ?>><a id="artistSpiralMenuLink" href="index.php?page=widgets&sub=artistSpiral">Spiral</a></li>
+                            <li <?php echo $selectedSubMenu == 'artistTypewriter' ? 'class="active"' : '' ?>><a id="artistTypewriterMenuLink" href="index.php?page=widgets&sub=artistTypewriter">Typewriter</a></li>
+                        </ul>
+                    </div>
+                    <!-- profile sub menu -->
+
+                </div>
+                <!-- sub menu span -->                
+
+                <!-- form span -->                
+                <div class="span5">
+
+                    <!-- form -->
+                    <div class="well blank">
+                        <h4>Settings</h4>
+                        <?php if (isset($username)) { ?>  
+                        <form class="form-horizontal">
+                            <!-- period selection -->
+                            <div class="control-group">
+                                <label class="control-label" for="periodSelectBox">Period</label>
+                                <div class="controls">
+                                    <select id="periodSelectBox">
+                                        <option value="overall">Overall</option>
+                                        <option value="12month">Last 12 months</option>
+                                        <option value="6month">Last 6 months</option>
+                                        <option value="3month">Last 3 months</option>
+                                        <option value="1month">Last 1 month</option>
+                                        <option value="7day">Last 7 days</option>
+                                    </select>                            
+                                </div>
+                            </div>  
+                            <!-- period selection -->
+                            <!-- album & artist collage style selection -->
+                            <div class="control-group" id="styleControlGroup">
+                                <label class="control-label" for="styleSelectBox">Style</label>
+                                <div class="controls">
+                                    <select id="styleSelectBox">
+                                        <option value="0">Fixed design</option>
+                                        <option value="1">Customizable</option>
+                                    </select>                            
+                                </div>
+                            </div>                            
+                            <!-- album & artist collage style selection -->
+                            <!-- album & artist collage columns selection -->
+                            <div class="control-group" id="columnsControlGroup">
+                                <label class="control-label">Colums</label>
+                                <div class="controls">
+                                    <select id="columnsSelectBox">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option selected>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                    </select>                            
+                                </div>
+                            </div>
+                            <!-- album & artist collage columns selection -->
+                            <!-- album & artist collage rows selection -->
+                            <div class="control-group" id="rowsControlGroup">
+                                <label class="control-label">Rows*</label>
+                                <div class="controls">
+                                    <select id="rowsSelectBox">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option selected>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                    </select>                            
+                                </div>
+                            </div>
+                            <!-- album & artist collage rows selection -->
+
+                            <!-- album & artist collage border color selection -->
+                            <div class="control-group" id="borderColorControlGroup">
+                                <label class="control-label" for="borderColorSelectBox">Border Color</label>
+                                <div class="controls">
+                                    <select id="borderColorSelectBox">
+                                        <option value="none">None</option>
+                                        <option value="black">Black</option>
+                                        <option value="white">White</option>
+                                        <option value="red">Red</option>
+                                        <option value="green">Green</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="purple">Purple</option>
+                                    </select>                            
+                                </div>
+                            </div>   
+                            <!-- album & artist collage border color selection -->
+                            
+                            <!-- album & artist collage playcount yes/no option -->
+                            <div class="control-group" id="playCountVisibleControlGroup">
+                                <label class="control-label" for="headerColorSelectBox">Show Play Count</label>
+                                <div class="controls">
+                                    <select id="playCountVisibleSelectBox">
+                                        <option value="no">No</option>
+                                        <option value="yes">Yes</option>
+                                    </select>                            
+                                </div>
+                            </div>   
+                            <!-- album & artist collage playcount yes/no option -->
+
+                            <!-- spiral color selection -->
+                            <div class="control-group" id="spiralColorControlGroup">
+                                <label class="control-label" for="spiralColorSelectBox">Color</label>
+                                <div class="controls">
+                                    <select id="spiralColorSelectBox">
+                                        <option value="red" selected>Red</option>
+                                        <option value="black">Black</option>                                        
+                                        <option value="blue">Blue</option>                                        
+                                        <option value="green">Green</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="purple">Purple</option>
+                                    </select>                            
+                                </div>
+                            </div>                               
+                            <!-- spiral color selection -->
+                            
+                            <!-- typewriter font selection -->
+                            <div class="control-group" id="typewriterFontControlGroup">
+                                <label class="control-label" for="typewriterFontSelectBox">Font</label>
+                                <div class="controls">
+                                    <select id="typewriterFontSelectBox">
+                                        <option value="carbon">Default</option>
+                                        <option value="courier">Courier</option>
+                                        <option value="courier-bold">Courier bold</option>
+                                        <option value="1942">1942</option>
+                                        <option value="makisupa">Makisupa</option>
+                                        <option value="larabieb">Larabieb</option>
+                                        <option value="monaco">Monaco</option>
+                                        <option value="vera">Vera</option>
+                                        <option value="droid">Droid</option>
+                                        <option value="luximb">Luxi</option>
+                                    </select>                            
+                                </div>
+                            </div>                               
+                            <!-- typewriter font selection -->
+                            
+                            <!-- typewriter capitalization selection -->
+                            <div class="control-group" id="typewriterCapitalizationControlGroup">
+                                <label class="control-label" for="typewriterCapitalizationSelectBox">Capitalization</label>
+                                <div class="controls">
+                                    <select id="typewriterCapitalizationSelectBox">
+                                        <option value="default">Default</option>
+                                        <option value="lower" selected>All lower</option>
+                                        <option value="upper">All upper</option>
+                                    </select>                            
+                                </div>
+                            </div>   
+                            <!-- typewriter capitalization selection -->
+                            
+                            <!-- typewriter background color selection -->
+                            <div class="control-group" id="typewriterBackgroundControlGroup">
+                                <label class="control-label" for="typewriterBackgroundSelectBox">Background</label>
+                                <div class="controls">
+                                    <select id="typewriterBackgroundSelectBox">
+                                        <option value="transparent" selected>Transparent</option>
+                                        <option value="white">White</option>
+                                        <option value="black">Black</option>
+                                    </select>                            
+                                </div>
+                            </div>   
+                            <!-- typewriter background color selection -->
+                            
+                            <!-- typewriter distortion selection -->
+                            <div class="control-group" id="typewriterDistortionControlGroup">
+                                <label class="control-label" for="typewriterDistortionSelectBox">Distortion</label>
+                                <div class="controls">
+                                    <select id="typewriterDistortionSelectBox">
+                                        <option value="0">None</option>
+                                        <option value="1">Little bit</option>
+                                        <option value="2">Some</option>
+                                        <option value="3" selected>Average</option>
+                                        <option value="4">Quite</option>
+                                        <option value="5">Much</option>
+                                        <option value="6">Extreme</option>
+                                    </select>                            
+                                </div>
+                            </div>   
+                            <!-- typewriter distortion selection -->  
+                            
+                            <!-- typewriter color mask selection -->
+                            <div class="control-group" id="typewriterColorControlGroup">
+                                <label class="control-label" for="typewriterColorSelectBox">Color</label>
+                                <div class="controls">
+                                    <select id="typewriterColorSelectBox">
+                                        <option value="black">Black</option>
+                                        <option value="white">White</option>
+                                        <option value="mask-red">Red</option>
+                                        <option value="mask-purple">Purple</option>
+                                        <option value="mask-green">Green</option>
+                                        <option value="mask-yellow">Yellow</option>
+                                        <option value="mask-blue">Blue</option>
+                                        <option value="mask-gybe" selected>Faded</option>
+                                        <option value="mask-heart3">Red heart</option>
+                                        <option value="mask-fire">Flames</option>
+                                        <option value="mask-color-stripes">Color stripes</option>
+                                        <option value="mask-water">Waterish</option>
+                                        <option value="mask-red-yellow">Red & Yellow</option>
+                                        <option value="mask-cutcopy">In ghost colours</option>
+                                        <option value="mask-spiral1">Spiral</option>
+                                        <option value="mask-cubes">Red cube</option>
+                                        <option value="mask-rasta2">Rasta</option>
+                                    </select>                            
+                                </div>
+                            </div> 
+                            <!-- typewriter color mask selection -->
+                            
+                            <!-- album & artist collage header option -->
+                            <div class="control-group" id="headerColorControlGroup">
+                                <h5>Header</h5>
+                                <label class="control-label" for="headerColorSelectBox">Text Color</label>
+                                <div class="controls">
+                                    <select id="headerColorSelectBox">
+                                        <option value="none">None</option>
+                                        <option value="black">Black</option>
+                                        <option value="red">Red</option>
+                                        <option value="green">Green</option>
+                                        <option value="yellow">Yellow</option>
+                                        <option value="purple">Purple</option>
+                                    </select>                            
+                                </div>
+                            </div>   
+                            <!-- album & artist collage header opt -->
+                            
+                            <!-- premium user message -->
+                            <div class="control-group" id="premiumUserRowInfoControlGroup">
+                                <span style="color: black;"><i>* The maximum number of rows is limited to 3 for non premium users.</i></span>
+                            </div> 
+                            <!-- premium user message -->
+                            <!-- premium user message -->
+                            <div class="control-group" id="premiumUserInfoControlGroup">
+                                <span style="color: black;"><i>Consider becoming a premium user for better quality images and 
+                                        more up-to-date images. Read about it <a href="index.php?page=home&sub=premium">here.</a></i></span>
+                            </div> 
+                            <!-- premium user message -->
+                        </form> 
+                        <?php } else { ?>
+                        <span id="previewPleaseLoginLabel1">Please first login with your last.fm username.</span>
+                        <?php } ?> 
+                    </div>                  
+                    <!-- form -->
+
+                    <!-- code to copy & paset box -->
+                    <div class="well blank">
+                        <h4>Text to copy &amp; paste</h4>
+                        <textarea id="bbcodeTextArea" readonly></textarea>
+                        <p>Copy the text and paste it in the "about you" section of your profile. You can do this by opening the last.fm settings page.</p>
+                        <a href="http://www.last.fm/settings" target="blank">Open last.fm settings</a>
+                    </div>
+                    <!-- code to copy & paset box -->
+
+                </div>
+                <!-- form span -->      
+
+                <!-- preview span -->                
+                <div class="span5">
+                    <div class="well blank">
+                        <h4>Preview</h4>
+                        <?php if (isset($username)) { ?>  
+                        <img id="previewImage" src="" width="300px" class="center" />
+                        <img class="center" src="images/ajax-loader.gif" id="previewLoadingImage" />
+                        <?php } else { ?>
+                        <span id="previewPleaseLoginLabel2">Please first login with your last.fm username.</span>
+                        <?php } ?>
+                    </div>
+                </div>
+                <!-- preview span -->                

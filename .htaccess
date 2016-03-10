@@ -1,0 +1,84 @@
+php_flag display_errors off
+php_value include_path "/home/lastfmtool/public_html"
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule config_typewriter.html http://lastfmtools.com/web/index.php [NC,R]
+RewriteRule config_topalbumcollage.html http://lastfmtools.com/web/index.php [NC,R]
+RewriteRule config_topartistcollage.html http://lastfmtoolscom/web/index.php [NC,R]
+RewriteRule config_topartistspiral.html http://lastfmtools.com/web/index.php [NC,R]
+
+RewriteRule config_typewriter.php http://lastfmtools.com/web/index.php [NC,R]
+RewriteRule config_topalbumcollage.php http://lastfmtools.com/web/index.php [NC,R]
+RewriteRule config_topartistcollage.php http://lastfmtools.com/web/index.php [NC,R]
+RewriteRule config_topartistspiral.php http://lastfmtools.com/web/index.php [NC,R]
+
+RewriteRule output_topartistspiral.php output/topartists_spiral.php
+RewriteRule output_typewriter.php output/topartists_typewriter.php
+RewriteRule output_topartistcollage.php output/topartists_collage.php
+RewriteRule output_topalbumcollage.php output/topalbums_collage.php
+
+RewriteRule ^output/spiral/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9]+),([a-zA-Z]+).png output/topartists_spiral.php?username=$1&period=$2&color=$3&headerColor=$4
+RewriteRule ^output/spiral/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9]+).png output/topartists_spiral.php?username=$1&period=$2&color=$3
+
+RewriteRule ^output/typewriter/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9._%+-]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z0-9._%+-]+),([0-9]+),([a-zA-Z]+).png output/topartists_typewriter.php?username=$1&period=$2&font=$3&case=$4&background=$5&mask=$6&distortion=$7&headerColor=$8
+RewriteRule ^output/typewriter/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9._%+-]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z0-9._%+-]+),([0-9]+).png output/topartists_typewriter.php?username=$1&period=$2&font=$3&case=$4&background=$5&mask=$6&distortion=$7
+
+RewriteRule ^output/collage/topalbums/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topalbums_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&headerColor=$6&showPC=$7
+RewriteRule ^output/collage/topalbums/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+).jpg output/topalbums_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5
+
+RewriteRule ^output/collage/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topartists_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&headerColor=$6&showPC=$7
+RewriteRule ^output/collage/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+).jpg output/topartists_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5
+
+RewriteRule ^output/collage/topalbums_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topalbums_collage_var01.php?username=$1&period=$2&border=$3&headerColor=$4&showPC=$5
+RewriteRule ^output/collage/topalbums_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+).jpg output/topalbums_collage_var01.php?username=$1&period=$2&border=$3
+
+RewriteRule ^output/collage/topartists_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topartists_collage_var01.php?username=$1&period=$2&border=$3&headerColor=$4&showPC=$5
+RewriteRule ^output/collage/topartists_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+).jpg output/topartists_collage_var01.php?username=$1&period=$2&border=$3
+
+
+
+#RewriteRule ^output/spiral/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9]+) output/topartists_spiral.php?username=$1&period=$2&color=$3
+#RewriteRule ^output/typewriter/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9._%+-]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z0-9._%+-]+),([0-9]+) output/topartists_typewriter.php?username=$1&period=$2&font=$3&case=$4&background=$5&mask=$6&distortion=$7
+#RewriteRule ^output/collage/topalbums_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+) output/topalbums_collage_var01.php?username=$1&period=$2&border=$3
+#RewriteRule ^output/collage/topalbums/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+) output/topalbums_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5
+#RewriteRule ^output/collage/topartists_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+) output/topartists_collage_var01.php?username=$1&period=$2&border=$3
+#RewriteRule ^output/collage/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+) output/topartists_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5
+#RewriteRule ^output/charts/artistsweek/([a-zA-Z0-9._%+-]+),(.*),([0-9]+),([a-zA-Z0-9]+) output/charts_artistsweek.php?username=$1&artists=$2&nrweeks=$3&layout=$4
+#RewriteRule ^output/collage/topalbums_3d/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+) output/topalbums_3d.php?username=$1&period=$2&cols=$3&rows=$4&border=$5
+
+#
+# PREVIEWS
+#
+
+RewriteRule ^output/preview/spiral/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9]+),([a-zA-Z]+).png output/topartists_spiral.php?username=$1&period=$2&color=$3&headerColor=$4&preview=1
+
+RewriteRule ^output/preview/typewriter/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9._%+-]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z0-9._%+-]+),([0-9]+),([a-zA-Z]+).png output/topartists_typewriter.php?username=$1&period=$2&font=$3&case=$4&background=$5&mask=$6&distortion=$7&headerColor=$8&preview=1
+
+RewriteRule ^output/preview/collage/topalbums/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topalbums_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&headerColor=$6&showPC=$7&preview=1
+
+RewriteRule ^output/preview/collage/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topartists_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&headerColor=$6&showPC=$7&preview=1
+
+RewriteRule ^output/preview/collage/topalbums_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topalbums_collage_var01.php?username=$1&period=$2&border=$3&headerColor=$4&showPC=$5&preview=1
+
+RewriteRule ^output/preview/collage/topartists_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z]+).jpg output/topartists_collage_var01.php?username=$1&period=$2&border=$3&headerColor=$4&showPC=$5&preview=1
+
+
+#RewriteRule ^output/preview/spiral/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9]+) output/topartists_spiral.php?username=$1&period=$2&color=$3&preview=1
+#RewriteRule ^output/preview/typewriter/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z0-9._%+-]+),([a-zA-Z]+),([a-zA-Z]+),([a-zA-Z0-9._%+-]+),([0-9]+) output/topartists_typewriter.php?username=$1&period=$2&font=$3&case=$4&background=$5&mask=$6&distortion=$7&preview=1
+#RewriteRule ^output/preview/collage/topalbums_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+) output/topalbums_collage_var01.php?username=$1&period=$2&border=$3&preview=1
+#RewriteRule ^output/preview/collage/topalbums/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+) output/topalbums_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&preview=1
+#RewriteRule ^output/preview/collage/topartists_var01/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([a-zA-Z]+) output/topartists_collage_var01.php?username=$1&period=$2&border=$3&preview=1
+#RewriteRule ^output/preview/collage/topartists/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+) output/topartists_collage.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&preview=1
+#RewriteRule ^output/preview/charts/artistsweek/([a-zA-Z0-9._%+-]+),(.*),([0-9]+),([a-zA-Z0-9]+) output/charts_artistsweek.php?username=$1&artists=$2&nrweeks=$3&layout=$4&preview=1
+#RewriteRule ^output/preview/collage/topalbums_3d/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+) output/topalbums_3d.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&preview=1
+#RewriteRule ^output/preview/collage/offline/([a-zA-Z0-9._%+-]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+),([a-zA-Z]+) output/topalbums_offline.php?username=$1&period=$2&cols=$3&rows=$4&border=$5&preview=1
+
+RewriteRule webOld/admin - [NC,PT] 
+
+RewriteRule /*.(gif|jpg|png|ico|css|js)$ - [NC,S=1] 
+RewriteRule webOld/([a-zA-Z0-9._%+-]+)/([a-zA-Z0-9_]+) webOld/index.php?page=$1&sub=$2
+

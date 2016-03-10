@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Gammalyrae Last.fm Tools</title>
+        <meta name="description" content="Last.fm widgets">
+        <meta name="keywords" content="music, lastfm, last.fm, generators, gadgets, generator, gadget, spiral, typewriter, top artists, top albums, top lists, art, collage, text">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+        <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet"> 
+        <link href="css/main20140329.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="">
+            <div style="margin: 0px auto; position: relative; width: 800px; padding-top: 10px; padding-bottom: 10px">
+                <script type="text/javascript">
+                    <!--
+                        /* lastfm, 728x90, gemaakt 12-8-09 */
+                        google_ad_client = "pub-3886802454073594";
+                        google_ad_slot = "2696482979";
+                        google_ad_width = 728;
+                        google_ad_height = 90;
+                    //-->
+                </script>
+                <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                </script>
+            </div>
+        </div>
+
+        <!-- main menu -->
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="index.php?page=home">Gammalyrae</a>
+                <ul class="nav">
+                    <li <?php echo $page == "home" ? 'class="active"' : '' ?>><a href="index.php?page=home">Home</a></li>
+                    <li <?php echo $page == "widgets" ? 'class="active"' : '' ?>><a href="index.php?page=widgets">Make Widgets</a></li>
+                    <li <?php echo $page == "app" ? 'class="active"' : '' ?>><a href="index.php?page=app">iPhone App</a></li>
+                    <li <?php echo $page == "twitter" ? 'class="active"' : '' ?>><a href="index.php?page=twitter">Twitter <img src="images/twitter-bird.png" width="16" height="16" style="width: 16px; height: 16px;"/></a></li>
+                    <!-- <li <?php echo $page == "facebook" ? 'class="active"' : '' ?>><a href="index.php?page=facebook">Facebook</a></li> -->
+                </ul>
+                <?php if (isset($username)) { ?>               
+                <ul class="nav pull-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $username ?> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="signout.php?page=<?php echo $page ?>">Change Username</a></li>
+                        </ul>
+                    </li>
+                </ul>                
+                <?php } else { ?>               
+                <form class="navbar-form pull-right" action="signin.php?page=<?php echo $page ?>" method="post">
+                  <input class="span2" type="text" placeholder="Last.fm Username" name="username">
+                  <button type="submit" class="btn">Login</button>
+                </form>
+                <?php } ?>               
+            </div>            
+        </div>
+        <!-- main menu -->
+
+        <?php if ($page == 'home') { ?>
+
+        <!-- container for home -->
+        <div class="container">
+            <div class="row">
+                
+                <?php  include "template-home.html"; ?>
+                          
+            </div>
+        </div>
+        <!-- container for home -->
+
+        <?php } else if ($page == 'widgets') { ?>
+
+        <!-- container for widgets -->
+        <div class="container">
+            <div class="row">
+
+                <?php  include "template-widgets.html"; ?>
+
+            </div>
+        </div>
+        <!-- container for widgets -->
+
+        <?php } else if ($page == 'app') { ?>
+
+        <!-- container for widgets -->
+        <div class="container">
+            <div class="row">
+
+                <?php  include "template-app.html"; ?>
+
+            </div>
+        </div>
+        <!-- container for widgets -->
+
+
+        <?php } else if ($page == 'twitter') { ?>
+
+        <!-- container for twitter -->
+        <div class="container">
+            <div class="row">
+                
+                <?php  include "template-twitter.html"; ?>
+            
+            </div>
+        </div>
+        <!-- container for twitter -->
+
+        <?php } ?>
+
+        <script>
+
+            var username = <?php echo isset($username) ? '"' . $username . '"' : 'null'; ?>;
+            var selectedSubMenu = '<?php echo $selectedSubMenu; ?>';
+            var page = '<?php echo $page; ?>';
+            var twitterSelectedTweetPeriod = <?php echo isset($twitterSelectedTweetPeriod) ? '"' . $twitterSelectedTweetPeriod . '"' : 'null'; ?>;
+            var twitterSelectedCollagePeriod = <?php echo isset($twitterSelectedCollagePeriod) ? '"' . $twitterSelectedCollagePeriod . '"' : 'null'; ?>;
+            var MAIN_SERVER = '<?php echo BASE_SITE; ?>';
+
+        </script>
+
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/main20140329.js"></script>
+        
+    </body>
+</html>

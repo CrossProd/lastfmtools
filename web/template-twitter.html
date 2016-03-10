@@ -1,0 +1,153 @@
+                <!-- sub menu span -->                
+                <div class="span2">
+
+                    <!-- profile sub menu -->
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Twitter</li>
+                            <li class="active" id="homeWelcomeMenuItem"><a id="homeWelcomeMenuLink" href="">Preferences</a></li>
+                        </ul>
+                    </div>
+                    <!-- profile sub menu -->
+
+                </div>
+                <!-- sub menu span -->   
+
+                <!-- body span -->                
+                <div class="span10" id="welcomeBody">
+                    <div class="well blank">
+                        <h4>Twitter</h4>
+
+                        <p>Gammalyrae can periodically tweet a 3 x 3 collage with your nine most listened albums. This feature is new and
+                        therefore <b>experimental</b> and still very much in development. It is also possible to tweet a collage directly.</p>
+
+                        <?php if (isset($username)) { ?> 
+
+                        <?php if ($twitterIsLoggedIn) { ?>
+
+                        <p>You are logged in with the following twitter account: <b><?php echo $twitterScreenName; ?></b>.</p> 
+
+                        <p>If this is not you, you should <button type="submit" class="btn btn-default" id="twitterSignOutButton"><img src="images/twitter-bird.png" width="20" height="20" />&nbsp;Sign Out</button></p>
+
+                        <?php } else { ?>
+
+                        <p>To use this feature, you will have to login or authorize Gammalyrae at <a href="twitterlogin.php">twitter</a>. You will be
+                            automatically redirected back to this page once you have authorized Gammalyrae.</p>
+
+                        <p><button type="submit" class="btn btn-default" id="twitterSignInButton"><img src="images/twitter-bird.png" width="20" height="20" />&nbsp;Sign In</button></p>
+                        
+                        <?php } ?>
+
+                        <?php } else { ?>
+
+                            <span id="pleaseLoginLabel2">Please first login with your last.fm username.</span>
+
+                        <?php } ?> 
+
+
+                    </div>
+
+                    <?php if ($twitterIsLoggedIn && isset($username)) { ?>
+
+                    <div class="well blank">
+                        <h4>Periodic Tweets</h4>
+
+                        <?php if (isset($username)) { ?> 
+
+                        <p>Configure your periodic tweets. Please note that these automatic tweets are posted on sundays only.
+
+                        <p>Your tweet preferences:</p>
+
+                        <form class="form-horizontal">
+                            <!-- upload period selection -->
+                            <div class="control-group">
+
+                                <label class="control-label" for="uploadPeriodSelectBox">Tweet</label>
+                                <div class="controls">
+                                    <select id="uploadPeriodSelectBox">
+                                        <option value="never">Never</option>
+                                        <option value="week">Every week</option>
+                                        <option value="2week">Every two weeks</option>
+                                        <option value="month">Every month</option>
+                                    </select>                            
+                                </div>
+                            </div>
+                            <!-- upload period selection -->
+                             <!-- period selection -->
+                            <div class="control-group">
+                                <label class="control-label" for="collagePeriodSelectBox">Period</label>
+                                <div class="controls">
+                                    <select id="collagePeriodSelectBox">
+                                        <option value="7day">Last 7 days</option>
+                                        <option value="1month">Last 1 month</option>
+                                        <option value="3month">Last 3 months</option>
+                                        <option value="6month">Last 6 months</option>
+                                        <option value="12month">Last 12 months</option>
+                                        <option value="overall">Overall</option>
+                                    </select>                            
+                                </div>
+                            </div>  
+                            <!-- period selection -->
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="submit" class="btn btn-default" id="twitterUpdatePreferencesButton">Update Preferences</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <?php } else { ?>
+
+                            <span id="pleaseLoginLabel1">Please first login with your last.fm username.</span>
+
+                        <?php } ?> 
+
+                    </div>
+
+                     <div class="well blank">
+                        <h4>Direct Tweet</h4>
+
+                        <?php if (isset($username)) { ?> 
+
+                        <p>It is also possible to post a tweet directly.</p>
+
+                        <p>Select a period:</p>
+
+                        <form class="form-horizontal">
+                             <!-- period selection -->
+                            <div class="control-group">
+                                <label class="control-label" for="collagePeriodSelectBox2">Period</label>
+                                <div class="controls">
+                                    <select id="collagePeriodSelectBox2">
+                                        <option value="7day">Last 7 days</option>
+                                        <option value="1month">Last 1 month</option>
+                                        <option value="3month">Last 3 months</option>
+                                        <option value="6month">Last 6 months</option>
+                                        <option value="12month">Last 12 months</option>
+                                        <option value="overall">Overall</option>
+                                    </select>                            
+                                </div>
+                            </div>  
+                            <!-- period selection -->
+                            <!-- post button -->
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button id="twitterTweetButton" type="submit" class="btn btn-default"><img src="images/twitter-bird.png" width="20" height="20" />&nbsp;Tweet</button>
+                                    &nbsp;
+                                    <img src="images/ajax-loader.gif" id="twitterTweetWaitingImage" style="display: none;" />
+                                </div>
+                            </div>
+                            <!-- post button -->
+                        </form>
+
+                        <?php } else { ?>
+
+                            <span id="pleaseLoginLabel2">Please first login with your last.fm username.</span>
+
+                        <?php } ?> 
+
+                    </div>
+
+                    <?php } ?>
+
+                </div>
+                <!-- body span -->    

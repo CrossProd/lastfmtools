@@ -1,0 +1,147 @@
+                <!-- sub menu span -->                
+                <div class="span2">
+
+                    <!-- profile sub menu -->
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Home</li>
+                            <li <?php echo $selectedSubMenu == 'welcome' ? 'class="active"' : '' ?>><a id="homeWelcomeMenuLink" href="index.php?page=home">Welcome</a></li>
+                            <li class="nav-header">Premium</li>
+                            <li <?php echo $selectedSubMenu == 'premium' ? 'class="active"' : '' ?>><a id="priorityMenuLink" href="index.php?page=home&sub=premium">Premium</a></li>
+                            <li class="nav-header">About</li>
+                            <li <?php echo $selectedSubMenu == 'technology' ? 'class="active"' : '' ?>><a id="aboutTechnologyMenuLink" href="index.php?page=home&sub=technology">Technology</a></li>
+                            <li <?php echo $selectedSubMenu == 'faq' ? 'class="active"' : '' ?>><a id="aboutFAQMenuLink" href="index.php?page=home&sub=faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <!-- profile sub menu -->
+
+                </div>
+                <!-- sub menu span -->   
+                
+                <?php if ($selectedSubMenu == 'welcome') { ?>
+
+                <!-- body span -->                
+                <div class="span10" id="welcomeBody">
+                    <div class="well blank">
+                        <h4>Welcome</h4>
+                        <p>This is my new Last.fm widgets page! Here you can create your own customized widgets for your Last.fm profile.</p>
+                        <p>For feedback or questions you can leave a shout at the <a href="http://www.last.fm/group/Gammalyrae+Last.fm+Tools/" target="blank">group at last.fm</a>.</p>
+                    </div>
+                    <div class="well blank">
+                        <h4>Info</h4>
+                        <p>All the images will update automatically to reflect your latest listening statistics once it is placed on your profile.
+                            So there is no need to manually update them. The update frequency depends on what period is chosen and the user status. Premium users 
+                            have a much better update frequency. You can read more about this in the <a href="index.php?page=home&sub=premium">premium</a> section of this page.</p>
+                        <p>There are currently <b><?php echo count($GLOBALS['priority_users']) ?></b> premium users.</p>
+                    </div>
+                    <div class="row">
+                        <div class="span5">
+                            <div class="well blank">
+                                <img class="center" src="http://lastfmtools.com/output/collage/topalbums_var01/crossproduct,7day,black.jpg" />
+                            </div>
+                            <div class="well blank">
+                                <img class="center" src="http://lastfmtools.com/output_topartistspiral.php?username=crossproduct&period=overall&color=red" />
+                            </div>
+                        </div>
+
+                        <div class="span5">
+                            <div class="well blank">
+                                <img class="center" src="http://lastfmtools.com/output/typewriter/topartists/crossproduct,overall,carbon,lower,transparent,mask-gybe,3.png" />
+                            </div>
+                            <div class="well blank">
+                                <img class="center" src="http://lastfmtools.com/output/collage/topartists/crossproduct,overall,4,4,none.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- body span -->    
+
+                <?php } else if ($selectedSubMenu == 'premium') { ?>
+
+                <!-- body span -->                
+                <div class="span10" id="priorityBody" style="vi">
+                    <div class="well blank">
+                        <h4>Premium Users</h4>
+                        <p>If you like these widgets a lot and you want to support further development you are welcome to make a donation with paypal.
+                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="blank">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="5LAR6XNUQ2BJ6">
+                            <center><input type="image" src="https://www.paypal.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online."></center>
+                            <img alt="" border="0" src="https://www.paypal.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+                        </form></p>
+                        <p>Donations <b>above or equal to &#8364; 3.00</b> will make you a permanent <b>premium user</b>. Being a <b>premium user</b> means:
+                        <ul>
+                            <li>The update frequency of the widgets will increase drastically. See the update frequencies below for an indication.</li>
+                            <li>A sharper image quality for the collages. (better jpeg quality.)</li>
+                            <li>Much more rows are allowed in the collages.</li>
+                            <li>Your donation will make you a premium user for life :)</li>
+                            <li>Supporting this project and further development of widgets.</li>
+                            <li>A happy <a href="http://www.last.fm/user/CrossProduct/" target="blank">CrossProduct</a> :)</li>
+                        </ul></p>
+                        <p>Making you a <b>premium user</b> after receiving the donation is a manual process. <b>It might take a few days, please be patient.</b></p>
+                        <p><b>Important:</b> In case you miss the username field during the checkout process it is important that you send me a private message on last.fm with your username.</p>
+                        <p><b>Once you are a premium user I will send you a private message on last.fm to let you know. If you do not hear anything within 24 hours it is best to contact me because most likely I do not have your username.</b></p>
+                        <!--<p><b style="color:red">I'm currently on holiday and I will not be able to take care of the donations. I will be back the 19th of May 2013!</b></p>-->          
+                    </div>                    
+                    <div class="well blank">
+                        <h4>Refresh Rates</h4>
+                        <p>The widgets placed on your profile will be updated automatically. The update frequency depends on the selected period and the status of the user.
+                        <p>Update frequency for <b>premium users</b>:
+                        <ul>
+                            <li><strong>Last 7 days:</strong> every day</li>
+                            <li><strong>Last month:</strong> every 2 days</li>
+                            <li><strong>Last 3 months:</strong> every 2 days</li>
+                            <li><strong>Last 6 months:</strong> every 3 days</li>
+                            <li><strong>Last 12 months:</strong> every 3 days</li>
+                            <li><strong>Overall:</strong> every 5 days
+                        </ul></p>
+                        <p>Update frequency for normal users:
+                        <ul>
+                            <li><strong>Last 7 days:</strong> every 3 days</li>
+                            <li><strong>Last month:</strong> every 7 days</li>
+                            <li><strong>Last 3 months:</strong> every 7 days</li>
+                            <li><strong>Last 6 months:</strong> every 10 days</li>
+                            <li><strong>Last 12 months:</strong> every 15 days</li>
+                            <li><strong>Overall:</strong> every 20 days</li>
+                        </ul></p>
+                    </div>                    
+                </div>
+                <!-- body span -->
+
+                <?php } else if ($selectedSubMenu == 'technology') { ?>
+
+                <!-- body span -->                
+                <div class="span10" id="aboutTechnologyBody">
+                    <div class="well blank">
+                        <h4>This site would not have been possible without the following technologies:</h4>
+                        <ul>
+                            <li><a href="http://twitter.github.io/bootstrap/" target="blank">Bootstrap</a></li>
+                            <li><a href="http://jquery.com/" target="blank">jQuery</a></li>
+                            <li><a href="http://us.php.net/" target="blank">PHP</a></li>
+                            <li><a href="http://www.mysql.com/" target="blank">MySQL</a></li>
+                            <li><a href="http://www.last.fm/" target="blank">Last.fm</a></li>
+                        </ul>
+                    </div>                                  
+                </div>
+                <!-- body span --> 
+
+                <?php } else if ($selectedSubMenu == 'faq') { ?>
+                
+                <!-- body span -->                
+                <div class="span10" id="aboutFAQBody">
+                    <div class="well blank">
+                        <h4>I like the generated widget but how do I place it on my profile?</h4>
+                        <p>You have to manually select all the text in the "Code to copy &amp; past" box. Then you have to copy this text to the clipboard. You can do this with the mouse (right mouse button, copy) or by pressing CTRL-C. Then you should edit your last.fm profile and paste the text. You can do this with the mouse (right mouse button, paste) or by pressing CTRL-V.</p>
+                    </div>                                  
+                    <div class="well blank">
+                        <h4>I tried to place the image(s) on forums, messageboards, etc but it doesn't work. Why?</h4>
+                        <p>Some forums have a lot of visitors. This means that the pictures are loaded from the server a lot of times. To protect my server I have decided that the pictures are only allowed on the last.fm profiles.</p>
+                    </div>                                  
+                    <div class="well blank">
+                        <h4>Why are there advertisements on the website?</h4>
+                        <p>Even though they don't generate much money every penny helps to pay the hosting. It doesn't cover the costs though! </p>
+                    </div>                                  
+                </div>
+                <!-- body span --> 
+                
+                <?php } ?>

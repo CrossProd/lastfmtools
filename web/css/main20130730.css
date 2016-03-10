@@ -1,0 +1,71 @@
+body {
+  padding-bottom: 40px;
+}
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+.form-horizontal .controls {
+  margin-left: 110px;
+}
+
+.form-horizontal .control-label {
+  width: 100px;
+  text-align: left;
+}
+
+img.center {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.center {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+textarea {
+  width: 320px; 
+  height: 100px;
+  resize:none; 
+}
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  background-color: #D82C24;
+}
+
+a {
+  color: #D82C24;
+}
+
+a:hover,
+a:focus {
+  color: #D82C24;
+}
+
+.navbar .brand {
+  color: #D82C24;
+}
+
+.container {
+  margin-left: 60px;
+}
+
+.container.ad {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 60px;
+}
+
+.footer-text {
+  padding-left: 60px;
+}
+
+.well.blank {
+    background-color: #FFFFFF;
+}
